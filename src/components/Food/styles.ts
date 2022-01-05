@@ -1,6 +1,10 @@
 import styled, { css } from 'styled-components';
 
-export const Container = styled.div`
+interface IContainerFood {
+  available: boolean;
+}
+
+export const Container = styled.div<IContainerFood>`
   background: #f0f0f5;
   border-radius: 8px;
 
@@ -12,7 +16,7 @@ export const Container = styled.div`
     transition: 0.3s opacity;
     text-align: center;
 
-    ${props =>
+    ${(props) =>
     !props.available &&
     css`
         opacity: 0.3;
